@@ -9,6 +9,8 @@ Route::get('/', function () {
 Route::middleware(['auth'])->group(function () {
     Route::view('/dashboard', 'dashboard')->name('dashboard');
     Route::view('/profile', 'profile.profile')->name('profile');
+    Route::resource('posts', App\Http\Controllers\PostController::class)->middleware('auth');
+
 });
 
 
