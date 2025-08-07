@@ -10,9 +10,10 @@ Route::get('/', function () {
 Route::middleware(['auth'])->group(function () {
     Route::view('/dashboard', 'dashboard')->name('dashboard');
     Route::view('/profile', 'profile.profile')->name('profile');
-    Route::resource('posts', PostController::class)->middleware('auth');
+
 
 });
+ Route::resource('posts', PostController::class)->middleware('auth');
 
 
 require __DIR__.'/auth.php';

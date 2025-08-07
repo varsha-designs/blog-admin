@@ -2,17 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
-
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::where('user_id',Auth::id())->latest()->get();
+        $posts = Post::where('user_id', Auth::id())->get();
         return view('posts.index', compact('posts'));
     }
 
@@ -26,7 +25,7 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required',
             'content' => 'required',
-            'status' => 'required|in:draft,published',
+            'status' => 'required',
         ]);
 
         Post::create([
@@ -34,7 +33,7 @@ class PostController extends Controller
             'slug' => Str::slug($request->title),
             'content' => $request->content,
             'status' => $request->status,
-            'user_id' =>Auth::id(),
+            'user_id' => Auth::id(),
         ]);
 
         return redirect()->route('posts.index')->with('success', 'Post created successfully.');
@@ -55,7 +54,7 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required',
             'content' => 'required',
-            'status' => 'required|in:draft,published',
+            'status' => 'required',
         ]);
 
         $post->update([
