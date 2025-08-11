@@ -4,15 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class category extends Model
+class Category extends Model
 {
-     protected $table = 'category';
+    protected $table = 'category'; // only if table name is 'category', else Laravel assumes 'categories'
     protected $fillable = ['name', 'slug'];
 
-    public function post(){
+    public function posts()
+    {
         return $this->hasMany(Post::class);
     }
-
-
-
 }
+
