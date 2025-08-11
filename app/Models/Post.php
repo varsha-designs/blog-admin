@@ -8,7 +8,7 @@ class Post extends Model
 {
     protected $fillable = ['title', 'slug', 'content', 'status', 'user_id'];
 
-    public function user()
+    public function category()
     {
         return $this->belongsTo(category::class);
     }
