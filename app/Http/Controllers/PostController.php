@@ -42,13 +42,16 @@ class PostController extends Controller
 
     public function show(Post $post)
     {
-        return view('posts.show', compact('post'));
+         $categories = Category::all();
+        return view('posts.show', compact('post', 'categories'));
     }
 
-    public function edit(Post $post)
-    {
-        return view('posts.edit', compact('post'));
-    }
+
+        public function edit(Post $post)
+        {
+            $categories = Category::all();   // Get all categories
+            return view('posts.edit', compact('post', 'categories'));  // Pass categories too
+        }
 
     public function update(Request $request, Post $post)
     {
