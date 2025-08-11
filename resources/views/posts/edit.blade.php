@@ -35,8 +35,19 @@
                 <option value="published" {{ old('status', $post->status) == 'published' ? 'selected' : '' }}>Published</option>
             </select>
         </div>
-
-        <div class="flex justify-between">
+                <div class="mb-4">
+            <label for="category_id" class="block text-gray-700 font-semibold">Category</label>
+            <select name="category_id" id="category_id" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring focus:border-blue-300">
+                <option value="">-- Select Category --</option>
+                @foreach ($categories as $category)
+                    <option value="{{ $category->id }}"
+                        {{ old('category_id', isset($post) ? $post->category_id : '') == $category->id ? 'selected' : '' }}>
+                        {{ $category->name }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+    <div class="flex justify-between">
             <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Update</button>
             <a href="{{ route('posts.index') }}" class="text-gray-600 hover:underline">Cancel</a>
         </div>
