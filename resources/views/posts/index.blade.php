@@ -21,7 +21,7 @@
                 <tr class="border-t">
                     <td class="py-2 px-4">{{ $post->title }}</td>
                     <td class="py-2 px-4">{{ ucfirst($post->status) }}</td>
-                     <td class="py-2 px-4">{{ ucfirst($post->category) }}</td>
+                     <td class="py-2 px-4">{{ ucfirst($post->category->name) }}</td>
                     <td class="py-2 px-4 space-x-2">
                         <a href="{{ route('posts.show', $post) }}" class="text-blue-500 hover:underline">View</a>
                         <a href="{{ route('posts.edit', $post) }}" class="text-yellow-500 hover:underline">Edit</a>
