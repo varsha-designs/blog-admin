@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->text('content');
             $table->enum('status', ['draft', 'published'])->default('draft');
+            $table->enum('category', ['technology', 'lifestyle', 'health', 'education'])->default('technology');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
