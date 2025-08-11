@@ -21,6 +21,7 @@
                 <tr>
                     <td>{{ $post->title }}</td>
                     <td>{{ $post->status }}</td>
+                    <td>{{ $post->category }}</td>
                     <td>
                         <a href="{{ route('posts.show', $post) }}" class="btn btn-info btn-sm">View</a>
                         <a href="{{ route('posts.edit', $post) }}" class="btn btn-warning btn-sm">Edit</a>

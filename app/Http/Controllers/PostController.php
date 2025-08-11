@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\category;
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -27,6 +27,7 @@ class PostController extends Controller
             'title' => 'required',
             'content' => 'required',
             'status' => 'required',
+             'category_id' => 'required|exists:categories,id',
         ]);
 
         Post::create([
@@ -35,6 +36,7 @@ class PostController extends Controller
             'content' => $request->content,
             'status' => $request->status,
             'user_id' => Auth::id(),
+            'category_id' => $request->category_id,
         ]);
 
         return redirect()->route('posts.index')->with('success', 'Post created successfully.');
@@ -59,6 +61,7 @@ class PostController extends Controller
             'title' => 'required',
             'content' => 'required',
             'status' => 'required',
+            'category_id' => 'required|exists:categories,id',
         ]);
 
         $post->update([
@@ -66,6 +69,9 @@ class PostController extends Controller
             'slug' => Str::slug($request->title),
             'content' => $request->content,
             'status' => $request->status,
+            'category_id' => $request->category_id,
+
+
         ]);
 
         return redirect()->route('posts.index')->with('success', 'Post updated successfully.');

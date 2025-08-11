@@ -14,12 +14,14 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
              $table->id();
            $table->string('title');
-            $table->string('slug')->unique();
+            $table->foreignId('category_id')->constrained()->onDelete('cascade');
+            $table->string('slug');
             $table->text('content');
             $table->enum('status', ['draft', 'published'])->default('draft');
-            $table->enum('category', ['technology', 'lifestyle', 'health', 'education'])->default('technology');
+            $table->enum('category', ['technology', 'lifestyle', 'travel']);
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->timestamps();
+             $table->timestamps();
+
         });
     }
 
