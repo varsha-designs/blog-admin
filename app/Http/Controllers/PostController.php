@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -14,11 +15,11 @@ class PostController extends Controller
         $posts = Post::where('user_id', Auth::id())->get();
         return view('posts.index', compact('posts'));
     }
-
-    public function create()
-    {
-        return view('posts.create');
-    }
+       public function create()
+        {
+            $categories = Category::all(); // fetch all categories
+            return view('posts.create', compact('categories'));
+        }
 
     public function store(Request $request)
     {
