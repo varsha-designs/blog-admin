@@ -23,6 +23,7 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
+        // dd($request->all());
         $request->validate([
             'title' => 'required',
             'content' => 'required',
@@ -30,7 +31,7 @@ class PostController extends Controller
              'category_id' => 'required|exists:categories,id',
         ]);
 
-        Post::create([
+        $post = Post::create([
             'title' => $request->title,
             'slug' => Str::slug($request->title),
             'content' => $request->content,

@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('slug');
             $table->text('content');
             $table->enum('status', ['draft', 'published'])->default('draft');
-            $table->enum('category', ['technology', 'lifestyle', 'travel']);
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
              $table->timestamps();
 
