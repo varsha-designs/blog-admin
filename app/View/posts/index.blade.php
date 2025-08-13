@@ -4,10 +4,6 @@
 <div class="container">
     <h2>My Posts</h2>
 
-    @if(session('success'))
-        <div class="alert alert-success">{{ session('success') }}</div>
-    @endif
-
     <a href="{{ route('posts.create') }}" class="btn btn-primary mb-3">Create New Post</a>
 
     <table class="table table-bordered">

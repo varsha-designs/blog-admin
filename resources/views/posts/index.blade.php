@@ -5,6 +5,12 @@
 <div class="max-w-6xl mx-auto py-8">
     <h1 class="text-2xl font-bold mb-4">All Posts</h1>
 
+    @if(session('success'))
+    <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
+        {{ session('success') }}
+    </div>
+@endif
+
     <a href="{{ route('posts.create') }}" class="bg-blue-500 text-white px-4 py-2 rounded">+ Create Post</a>
 
     <table class="min-w-full mt-6 bg-white shadow-md rounded-lg overflow-hidden">
