@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StorePostRequest;
 use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
@@ -21,15 +22,9 @@ class PostController extends Controller
             return view('posts.create', compact('categories'));
         }
 
-    public function store(Request $request)
+    public function store(StorePostRequest $request)
     {
         // dd($request->all());
-        $request->validate([
-            'title' => 'required',
-            'content' => 'required',
-            'status' => 'required',
-             'category_id' => 'required|exists:categories,id',
-        ]);
 
         $post = Post::create([
             'title' => $request->title,
@@ -56,14 +51,8 @@ class PostController extends Controller
             return view('posts.edit', compact('post', 'categories'));  // Pass categories too
         }
 
-    public function update(Request $request, Post $post)
+    public function update(StorePostRequest $request, Post $post)
     {
-        $request->validate([
-            'title' => 'required',
-            'content' => 'required',
-            'status' => 'required',
-            'category_id' => 'required|exists:categories,id',
-        ]);
 
         $post->update([
             'title' => $request->title,
