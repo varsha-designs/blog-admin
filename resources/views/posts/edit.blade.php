@@ -27,16 +27,6 @@
             </select>
         </div>
 
-                <div class="mb-4">
-                <label for="category_id" class="block text-sm font-medium text-gray-700 mb-1">Category</label>
-            <select name="category_id" id="category_id" class="w-full border rounded px-3 py-2">
-            @foreach ($categories as $category)
-                <option value="{{ $category->id }}">{{ $category->name }}</option>
-            @endforeach
-        </select>
-         </div>
-
-
 
     <div class="flex justify-between">
             <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Update</button>
