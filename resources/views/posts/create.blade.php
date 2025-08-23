@@ -25,17 +25,6 @@
             </select>
         </div>
 
-                <div class="mb-4">
-                <label for="category_id" class="block mb-1 font-medium">Category</label>
-                <select name="category_id" id="category_id" class="w-full border rounded px-3 py-2">
-                    @foreach ($categories as $category)
-                        <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>
-                            {{ $category->name }}
-                        </option>
-                    @endforeach
-                </select>
-          </div>
-
         <div>
             <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Save Post</button>
             <a href="{{ route('posts.index') }}" class="text-gray-600 hover:underline ml-2">Cancel</a>
