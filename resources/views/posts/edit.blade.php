@@ -26,7 +26,16 @@
                 <option value="published" {{ old('status', $post->status) == 'published' ? 'selected' : '' }}>Published</option>
             </select>
         </div>
-
+    <div class="mb-4">
+                <label for="categories_id" class="block text-sm font-medium text-gray-700 mb-1">Category</label>
+            <select name="categories_id" id="categories_id" class="w-full border rounded px-3 py-2">
+            @foreach ($categories as $category)
+                <option value="{{ $category->id }}" {{ old('categories_id', $post->categories_id) == $category->id ? 'selected' : '' }}>
+    {{ $category->title }}
+</option>
+            @endforeach
+        </select>
+         </div>
 
     <div class="flex justify-between">
             <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Update</button>
