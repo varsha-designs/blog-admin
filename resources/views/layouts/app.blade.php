@@ -16,7 +16,7 @@
             <a href="{{ url('/') }}" class="text-2xl font-bold text-gray-800">BlogApp</a>
             <div class="flex space-x-4 items-center">
                 <a href="{{ route('posts.index') }}" class="text-gray-700 hover:text-blue-600 font-medium">Posts</a>
-                <a href="{{ route('catalog.index') }}" class="text-gray-700 hover:text-blue-600 font-medium">Category</a>
+                <a href="{{ route('categories.index') }}" class="text-gray-700 hover:text-blue-600 font-medium">Category</a>
                 <a href="{{ route('dashboard') }}" class="text-gray-700 hover:text-blue-600 font-medium">Dashboard</a>
                 <a href="{{ route('profile') }}" class="text-gray-700 hover:text-blue-600 font-medium">Profile</a>
                 <form method="POST" action="{{ route('logout') }}" class="inline">
