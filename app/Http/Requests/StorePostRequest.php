@@ -29,7 +29,7 @@ class StorePostRequest extends FormRequest
              'title' => 'required',
             'content' => 'required',
             'status' => 'required',
-            'category_id' => 'required|exists:categories,id',
+            'categories_id' => 'required|exists:categories,id',
 
         ];
     }
