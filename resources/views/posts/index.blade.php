@@ -13,6 +13,7 @@
             <tr class="bg-gray-100 text-left">
                 <th class="py-2 px-4">Title</th>
                 <th class="py-2 px-4">Status</th>
+                 <th class="py-2 px-4">Category</th>
                 <th class="py-2 px-4">Actions</th>
             </tr>
         </thead>
@@ -21,6 +22,7 @@
                 <tr class="border-t">
                     <td class="py-2 px-4">{{ $post->title }}</td>
                     <td class="py-2 px-4">{{ ucfirst($post->status) }}</td>
+                    <td class="py-2 px-4">{{ ucfirst( $post->category) }}</td>
                     <td class="py-2 px-4 space-x-2">
                         <a href="{{ route('posts.show', $post) }}" class="text-blue-500 hover:underline">View</a>
                         <a href="{{ route('posts.edit', $post) }}" class="text-yellow-500 hover:underline">Edit</a>
