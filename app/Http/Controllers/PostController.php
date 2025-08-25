@@ -24,15 +24,16 @@ class PostController extends Controller
 
     public function store(StorePostRequest $request)
     {
-        // dd($request->all());
+        $category = Category::find($request->categories_id);
 
-        $post = Post::create([
+        $post= Post::create([
             'title' => $request->title,
             'slug' => Str::slug($request->title),
             'content' => $request->content,
             'status' => $request->status,
             'user_id' => Auth::id(),
-            'category_id' => $request->category_id,
+            'categories_id' => $request->categories_id,
+            'category' => $category->title,
         ]);
 
         return redirect()->route('posts.index')->with('success', 'Post created successfully.');
@@ -53,14 +54,15 @@ class PostController extends Controller
 
     public function update(StorePostRequest $request, Post $post)
     {
+        $category = Category::find($request->categories_id);
 
         $post->update([
             'title' => $request->title,
             'slug' => Str::slug($request->title),
             'content' => $request->content,
             'status' => $request->status,
-            'category_id' => $request->category_id,
-
+            'categories_id' => $request->categories_id,
+            'category' => $category->title,
 
         ]);
 
