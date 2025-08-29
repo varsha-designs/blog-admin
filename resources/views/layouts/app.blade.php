@@ -39,6 +39,10 @@
                         <ul id="dropdown-posts" class="hidden pl-6 space-y-2">
                             <li><a href="{{ route('posts.index') }}" class="block py-2 hover:text-blue-600">All Posts</a></li>
                             <li><a href="{{ route('posts.create') }}" class="block py-2 hover:text-blue-600">Create Post</a></li>
+                           <li><a href="{{ route('posts.index') }}" class="block py-2 hover:text-blue-600">Edit Post</a></li>
+                            <li><a href="{{ route('posts.index') }}" class="block py-2 hover:text-blue-600">Delete Post</a></li>
+
+
                         </ul>
                     </li>
 
@@ -54,6 +58,9 @@
                         <ul id="dropdown-categories" class="hidden pl-6 space-y-2">
                             <li><a href="{{ route('categories.index') }}" class="block py-2 hover:text-blue-600">All Categories</a></li>
                             <li><a href="{{ route('categories.create') }}" class="block py-2 hover:text-blue-600">Create Category</a></li>
+                            <li><a href="{{ route('categories.index') }}" class="block py-2 hover:text-blue-600">Edit Category</a></li>
+                            <li><a href="{{ route('categories.index') }}" class="block py-2 hover:text-blue-600">Delete Category</a></li>
+
                         </ul>
                     </li>
 
