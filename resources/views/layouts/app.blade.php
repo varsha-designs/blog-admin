@@ -15,8 +15,18 @@
         <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
             <a href="{{ url('/') }}" class="text-xl font-bold">BlogApp</a>
             <div>
-                <a href="{{ route('dashboard') }}" class="px-4 py-2 text-black hover:text-blue-600 ">Dashboard</a>
-                <a href="{{ route('profile') }}" class="px-4 py-2 text-black hover:text-blue-600">Profile</a>
+                 @if(auth()->user()->role == 'admin')
+                <a href="{{ route('admins.dashboard') }}" class="px-4 py-2 text-black hover:text-blue-600 ">Dashboard</a>
+            @else
+                <a href="{{ route('user.dashboard') }}" class="px-4 py-2 text-black hover:text-blue-600 ">Dashboard</a>
+            @endif
+
+                @if(auth()->user()->role == 'admin')
+                <a href="{{ route('admins.profile') }}" class="px-4 py-2 text-black hover:text-blue-600 ">Profile</a>
+            @else
+                <a href="{{ route('user.profile') }}" class="px-4 py-2 text-black hover:text-blue-600">Profile</a>
+            @endif
+
             </div>
         </div>
     </nav>

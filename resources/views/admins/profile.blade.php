@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'Profile')
+@section('title', 'Admin Profile')
 
 @section('content')
     <h1 class="text-2xl font-bold mb-4">Profile</h1>
-    <p>This is your profile page.</p>
+    <p>This is your admin profile page.</p>
 @endsection

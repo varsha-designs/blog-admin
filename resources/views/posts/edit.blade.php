@@ -4,7 +4,7 @@
 <div class="max-w-3xl mx-auto py-8">
     <h1 class="text-2xl font-bold mb-6">Edit Post</h1>
      @include('components.alert')
-
+@if(auth()->user()->role == 'admin')
     <form action="{{ route('posts.update', $post) }}" method="POST" class="bg-white p-6 rounded shadow">
         @csrf
         @method('PUT')
@@ -42,5 +42,8 @@
             <a href="{{ route('posts.index') }}" class="text-gray-600 hover:underline">Cancel</a>
         </div>
     </form>
+    @else
+    <p class="text-red-500">You are not authorized to edit this post.</p>
+@endif
 </div>
 @endsection

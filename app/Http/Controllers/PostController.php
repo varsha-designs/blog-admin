@@ -15,6 +15,8 @@ class PostController extends Controller
     {
         $posts = Post::where('user_id', Auth::id())->get();
         return view('posts.index', compact('posts'));
+
+
     }
        public function create()
         {
@@ -46,9 +48,14 @@ class PostController extends Controller
     }
 
 
-        public function edit(Post $post)
+        public function edit(Post $post, $id)
         {
-            $categories = Category::all();   // Get all categories
+            $categories = Category::all();
+              $post = Post::findOrFail($id);
+
+    if(Auth::user()->role != 'admin') {
+        abort(403, 'Unauthorized');
+    }  // Get all categories
             return view('posts.edit', compact('post', 'categories'));  // Pass categories too
         }
 
@@ -74,4 +81,9 @@ class PostController extends Controller
         $post->delete();
         return redirect()->route('posts.index')->with('success', 'Post deleted successfully.');
     }
-}
+
+    }
+
+
+
+

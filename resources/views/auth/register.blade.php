@@ -16,7 +16,6 @@
                     class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm mt-1 block w-full">
                     <option value="user">User</option>
                     <option value="admin">Admin</option>
-                    <option value="editor">Editor</option>
                 </select>
             </div>
 

@@ -25,12 +25,15 @@
                     <td class="py-2 px-4">{{ ucfirst( $post->category) }}</td>
                     <td class="py-2 px-4 space-x-2">
                         <a href="{{ route('posts.show', $post) }}" class="text-blue-500 hover:underline">View</a>
+                        @if(auth()->user()->role == 'admin')
                         <a href="{{ route('posts.edit', $post) }}" class="text-yellow-500 hover:underline">Edit</a>
                         <form action="{{ route('posts.destroy', $post) }}" method="POST" class="inline-block" onsubmit="return confirm('Delete this post?')">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="text-red-500 hover:underline">Delete</button>
                         </form>
+                        <span class="text-gray-500 text-sm ml-2">By: {{ $post->user->name }}</span>
+            @endif
                     </td>
                 </tr>
             @empty

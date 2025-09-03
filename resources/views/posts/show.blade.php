@@ -11,7 +11,9 @@
         <p class="text-gray-800 whitespace-pre-line">{{ $post->content }}</p><br>
 
         <div class="mt-6">
+            @if(auth()->user()->role == 'admin')
             <a href="{{ route('posts.edit', $post) }}" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">Edit</a>
+            @endif
             <a href="{{ route('posts.index') }}" class="ml-2 text-gray-600 hover:underline">Back to Posts</a>
         </div>
     </div>
