@@ -22,8 +22,8 @@
         <div class="mb-4">
             <label for="status" class="block text-gray-700 font-semibold">Status</label>
             <select name="status" id="status" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring focus:border-blue-300">
-                <option value="draft" {{ old('status', $post->status) == 'draft' ? 'selected' : '' }}>Draft</option>
-                <option value="published" {{ old('status', $post->status) == 'published' ? 'selected' : '' }}>Published</option>
+                <option value="approved" {{ old('status', $post->status) == 'approved' ? 'selected' : '' }}>Approved</option>
+                <option value="cancelled" {{ old('status', $post->status) == 'cancelled' ? 'selected' : '' }}>Cancelled</option>
             </select>
         </div>
     <div class="mb-4">
