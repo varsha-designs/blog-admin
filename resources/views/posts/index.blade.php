@@ -21,8 +21,16 @@
             @forelse ($posts as $post)
                 <tr class="border-t">
                     <td class="py-2 px-4">{{ $post->title }}</td>
-                    <td class="py-2 px-4">{{ ucfirst($post->status) }}</td>
-                    <td class="py-2 px-4">{{ ucfirst( $post->category) }}</td>
+<td>
+    @if($post->status == 'pending')
+        <span class="text-yellow-500">Pending</span>
+    @elseif($post->status == 'approved')
+        <span class="text-green-500">Approved</span>
+    @elseif($post->status == 'cancelled')
+        <span class="text-red-500">Cancelled</span>
+    @endif
+</td>
+<td class="py-2 px-4">{{ ucfirst( $post->category) }}</td>
                     <td class="py-2 px-4 space-x-2">
                         <a href="{{ route('posts.show', $post) }}" class="text-blue-500 hover:underline">View</a>
                         @if(auth()->user()->role == 'admin')
