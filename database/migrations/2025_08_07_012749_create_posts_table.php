@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('categories_id')->constrained()->onDelete('cascade');
             $table->string('slug');
             $table->text('content');
-           $table->enum('status', ['draft', 'published'])->default('draft');
+            $table->string('status')->default('pending');
              $table->string('category');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
              $table->timestamps();
