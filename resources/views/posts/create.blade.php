@@ -18,11 +18,17 @@
         </div>
 
         <div>
+            @if(auth()->user()->role === 'admin')
             <label class="block mb-1 font-medium">Status</label>
             <select name="status" class="w-full border px-4 py-2 rounded">
-                <option value="draft" {{ old('status') == 'draft' ? 'selected' : '' }}>Draft</option>
-                <option value="published" {{ old('status') == 'published' ? 'selected' : '' }}>Published</option>
+                <option value="pending" {{ old('status') == 'pending' ? 'selected' : '' }}>Pending</option>
+                <option value="approved" {{ old('status') == 'approved' ? 'selected' : '' }}>Approved</option>
+                <option value="cancelled" {{ old('status') == 'cancelled' ? 'selected' : '' }}>Cancelled</option>
             </select>
+            @else
+            <label class="block mb-1 font-medium">Status</label>
+            <input type="pending" name="status" value="pending" class="w-full border px-4 py-2 rounded" readonly>
+            @endif
         </div>
          <div class="mb-4">
                 <label for="categories_id" class="block mb-1 font-medium">Category</label>
