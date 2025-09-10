@@ -7,7 +7,7 @@ This project allows authenticated users to **manage blog posts** (CRUD: Create, 
 
 ## 🚀 Features
 
-* 🔐 User Authentication (Login & Register)
+* 🔐 User Authentication (Login & Register) with Laravel Breeze
 * 📝 Manage blog posts (title, slug, content, status, author)
 * 📂 CRUD operations for posts
 * 🎨 Styled with Tailwind CSS
@@ -17,10 +17,12 @@ This project allows authenticated users to **manage blog posts** (CRUD: Create, 
 
 ## 🛠️ Tech Stack
 
-* **Backend:** Laravel
+* **Framework:** Laravel
+* **Auth Scaffolding:** Laravel Breeze
 * **Frontend:** Blade + Tailwind CSS
 * **Database:** MySQL
 * **Version Control:** Git
+* **Local Server:** Laravel Herd
 
 ---
 
@@ -65,14 +67,17 @@ php artisan migrate
 
 ### 5️⃣ Start Development Server
 
-```bash
+If you’re using Laravel Herd (recommended):
+Your app will be available at:
+👉 http://blog-admin.test
+
+If you’re not using Herd, you can still start the built-in Laravel server:
+
 php artisan serve
-```
+
 
 App will be available at:
-👉 [http://127.0.0.1:8000](http://127.0.0.1:8000)
-
----
+👉 http://127.0.0.1:8000
 
 ## 🔮 Future Improvements
 
