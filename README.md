@@ -68,7 +68,9 @@ php artisan migrate
 ### 5️⃣ Start Development Server
 
 If you’re using Laravel Herd (recommended):
+
 Your app will be available at:
+
 👉 http://blog-admin.test
 
 If you’re not using Herd, you can still start the built-in Laravel server:
