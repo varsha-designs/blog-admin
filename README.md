@@ -96,4 +96,34 @@ App will be available at:
 
 ## 📸 Screenshots
 
+REGISTRATION PAGE
+<img width="1624" height="874" alt="Screenshot 2025-09-10 135636" src="https://github.com/user-attachments/assets/27b90fe0-9f3e-4673-ab3d-34b079c6dc12" />
+LOGIN PAGE
+<img width="974" height="734" alt="Screenshot 2025-09-10 140035" src="https://github.com/user-attachments/assets/a30bbfc7-ec48-4411-9686-7be64dd62033" />
+USER DASHBOARD PAGE
+<img width="1911" height="874" alt="Screenshot 2025-09-10 135751" src="https://github.com/user-attachments/assets/718951d5-ca4f-4eea-8793-2ad874674ffa" />
+CATEGORY PAGE(USER)
+<img width="1912" height="877" alt="Screenshot 2025-09-10 135821" src="https://github.com/user-attachments/assets/7456aa40-6dad-424a-ace9-c427794a97e0" />
+CATEGORY EDIT PAGE(USER)
+<img width="1919" height="875" alt="Screenshot 2025-09-10 135843" src="https://github.com/user-attachments/assets/cbf4d34c-4bcb-412f-b0bf-c22a4906be2e" />
+CATEGORY VIEW PAGE(USER)
+<img width="1919" height="874" alt="Screenshot 2025-09-10 135902" src="https://github.com/user-attachments/assets/829735b3-c869-499f-a09f-ef802037e51d" />
+CATEGORY UPDATE PAGE(USER)
+<img width="1919" height="864" alt="Screenshot 2025-09-10 135916" src="https://github.com/user-attachments/assets/0f45d1b5-2f27-4854-8750-a2f0b6c0cc52" />
+POST CREATION PAGE(USER)
+<img width="1919" height="875" alt="Screenshot 2025-09-10 140006" src="https://github.com/user-attachments/assets/4c55c22a-869a-4f69-a932-819db961ab92" />
+POST UPDATE PAGE(USER)
+<img width="1919" height="870" alt="Screenshot 2025-09-10 140022" src="https://github.com/user-attachments/assets/604c6f59-9b38-482e-9b6b-cfdbac12a309" />
+
+
+
+
+
+
+
+
+
+
+
+
 
